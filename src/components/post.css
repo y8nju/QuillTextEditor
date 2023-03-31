@@ -16,7 +16,7 @@
 .postDelBtn {
   font-size: 0.8rem;
   color: #fff;
-  background-color: #a4a4ac;
+  background-color: var(--gray);
 }
 
 .post {

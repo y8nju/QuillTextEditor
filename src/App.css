@@ -23,8 +23,8 @@
   width: fit-content;
   font-size: 0.8rem;
   color: #fff;
-  background-color: #a4a4ac;
-  margin: .8rem auto 0;
+  background-color: var(--gray);
+  margin: 0.8rem auto 0;
 }
 
 /* Quill Style Overlay */
@@ -39,4 +39,26 @@
   border-bottom-right-radius: 0.5em;
   background-color: #fff;
   overflow: hidden;
+}
+.ql-container::after {
+  content: '이 에디터는 15초마다 자동 저장됩니다.';
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  color: var(--gray);
+  background-color: #fff;
+  padding: 4px 12px;
+}
+.ql-editor {
+  padding-bottom: 20px;
+}
+.ql-editor::-webkit-scrollbar {
+  width: 6px;
+}
+.ql-editor::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
 }

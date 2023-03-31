@@ -10,16 +10,20 @@ const PostList: React.FC = () => {
     <section className="postList">
       <header>
         <h3>PostList</h3>
-        <button
-          className="postDelBtn"
-          onClick={() => {
-            if (window.confirm('포스트를 전체 삭제 하시겠습니까?'))
-              localStorage.clear();
-            setPostList!([]);
-          }}
-        >
-          All Delete
-        </button>
+        {postList!.length > 0 ? (
+          <button
+            className="postDelBtn"
+            onClick={() => {
+              if (window.confirm('포스트를 전체 삭제 하시겠습니까?'))
+                localStorage.clear();
+              setPostList!([]);
+            }}
+          >
+            All Delete
+          </button>
+        ) : (
+          ''
+        )}
       </header>
       {postList
         ? postList.map((post, idx) => <Post key={idx} post={post as any} />)
