@@ -2,3 +2,13 @@
   width: 100%;
   margin-top: 2rem;
 }
+.post {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+.post * {
+  margin: 0;
+  font-size: 0.8rem;
+}

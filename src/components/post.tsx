@@ -1,8 +1,15 @@
+import './post.css';
+
 interface Props {
-  post: string;
+  post: { content: string; createdAt: Date };
 }
 
 const Post: React.FC<Props> = ({ post }) => {
-  return <div dangerouslySetInnerHTML={{ __html: post }}></div>;
+  return (
+    <section className="post" >
+      <h6>{post.createdAt.toString()}</h6>
+      <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+    </section>
+  );
 };
 export default Post;

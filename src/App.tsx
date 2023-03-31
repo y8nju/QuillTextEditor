@@ -14,7 +14,8 @@ function App() {
       alert('내용을 입력하세요 :)');
       return;
     }
-    setPostList!((prev: any) => [...prev, post]);
+    setPostList!((prev: any) => [{ content: post, createdAt: new Date() }, ...prev]);
+    setPost!('');
   };
 
   return (

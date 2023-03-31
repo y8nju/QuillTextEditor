@@ -9,13 +9,13 @@ import {
 interface ContextType {
   post?: string;
   setPost?: Dispatch<React.SetStateAction<string>>;
-  postList?: string[];
-  setPostList?: Dispatch<React.SetStateAction<string[]>>;
+  postList?: object[];
+  setPostList?: Dispatch<React.SetStateAction<object[]>>;
 }
 export const Context = createContext<ContextType | null>(null);
 export const ContextProvider = (props: { children: ReactNode }) => {
   const [post, setPost] = useState<string>('');
-  const [postList, setPostList] = useState<string[]>([]);
+  const [postList, setPostList] = useState<object[]>([]);
 
   return (
     <Context.Provider
