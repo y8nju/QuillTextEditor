@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --bgColor: #f0f0f0
 }
 
 a {
@@ -29,13 +31,16 @@ body {
   place-items: start center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bgColor);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+img {
+  max-width: 20vw;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;

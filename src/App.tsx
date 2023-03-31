@@ -16,7 +16,7 @@ function App() {
     }
     setPostList!((prev: any) => {
       const newData = [{ content: post, createdAt: new Date() }, ...prev];
-      localStorage.setItem("data", JSON.stringify(newData))
+      localStorage.setItem('data', JSON.stringify(newData));
       return newData;
     });
     setPost!('');
@@ -24,18 +24,21 @@ function App() {
 
   return (
     <div className="container">
-      <ReactQull
-        modules={{
-          toolbar: Toolbar,
-        }}
-        formats={Formats}
-        theme="snow"
-        value={post}
-        onChange={setPost}
-      />
-      <button className="saveBtn" onClick={haldeSavePostList}>
-        Save
-      </button>
+      <header className="QuillContainer">
+        <ReactQull
+          modules={{
+            toolbar: Toolbar,
+          }}
+          formats={Formats}
+          theme="snow"
+          value={post}
+          onChange={setPost}
+          placeholder="내용을 입력하세요"
+        />
+        <button className="saveBtn" onClick={haldeSavePostList}>
+          Save
+        </button>
+      </header>
       <PostList />
     </div>
   );
