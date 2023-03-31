@@ -2,13 +2,33 @@
   width: 100%;
   margin-top: 2rem;
 }
+.postList header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: .8rem;
+  padding-bottom: .8rem;
+}
+.postList h3 {
+  margin: 0;
+}
+.postDelBtn {
+  font-size: .8rem;
+}
+
 .post {
   background-color: #f9f9f9;
   padding: 0.8rem;
   border-radius: 4px;
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
 }
 .post * {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: .8rem;
+}
+.post .createdAt {
+  text-align: right;
+  font-weight: 400;
+  font-size: 10px;
 }

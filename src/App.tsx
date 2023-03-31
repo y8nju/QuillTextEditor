@@ -14,7 +14,11 @@ function App() {
       alert('내용을 입력하세요 :)');
       return;
     }
-    setPostList!((prev: any) => [{ content: post, createdAt: new Date() }, ...prev]);
+    setPostList!((prev: any) => {
+      const newData = [{ content: post, createdAt: new Date() }, ...prev];
+      localStorage.setItem("data", JSON.stringify(newData))
+      return newData;
+    });
     setPost!('');
   };
 
