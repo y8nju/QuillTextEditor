@@ -14,12 +14,14 @@ interface ContextType {
 }
 export const Context = createContext<ContextType | null>(null);
 export const ContextProvider = (props: { children: ReactNode }) => {
-  const [post, setPost] = useState<string>('');
+  const [post, setPost] = useState<string>(() => {
+    const tmp = localStorage.getItem('tmp');
+    return tmp ?? '';
+  });
   const [postList, setPostList] = useState<object[]>(() => {
     const data = localStorage.getItem('data');
     try {
-      if (data) 
-        return JSON.parse(data);
+      if (data) return JSON.parse(data);
       return [];
     } catch (e) {
       localStorage.removeItem('data');
