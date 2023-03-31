@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import ReactQull from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './App.css';
+import PostList from './components/PostList';
 import { Context } from './context/index';
 import { Formats, Toolbar } from './utils/index';
 
@@ -30,14 +31,7 @@ function App() {
       <button className="saveBtn" onClick={haldeSavePostList}>
         Save
       </button>
-      <div>
-        {postList!.map((post, idx) => (
-          <div key={idx}>
-            {/* <div dangerouslySetInnerHTML={{ __html: post }}></div> */}
-            {post}
-          </div>
-        ))}
-      </div>
+      <PostList />
     </div>
   );
 }
